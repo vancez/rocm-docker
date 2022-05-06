@@ -24,8 +24,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
   rocm-dev && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
-    pip3 install --no-cache-dir virtualenv && \
-  pip3 install --no-cache-dir torch torchvision --extra-index-url https://download.pytorch.org/whl/rocm4.5.2
+  pip3 install --no-cache-dir virtualenv && \
+  pip3 install --no-cache-dir torch torchvision --extra-index-url https://download.pytorch.org/whl/rocm4.5.2 && \
+  pip3 cache purge
 
 # Grant members of 'sudo' group passwordless privileges
 # Comment out to require sudo
